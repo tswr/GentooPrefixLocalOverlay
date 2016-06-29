@@ -1,0 +1,18 @@
+--- zmq/backend/cython/context.pyx.orig	2016-01-12 17:31:19.000000000 +0300
++++ zmq/backend/cython/context.pyx	2016-06-28 02:04:55.000000000 +0300
+@@ -109,15 +109,11 @@
+                 # move last handle to closed socket's index
+                 self._sockets[idx] = self._sockets[self._n_sockets]
+     
+-    
+     @property
+     def underlying(self):
+         """The address of the underlying libzmq context"""
+         return <size_t> self.handle
+     
+-    # backward-compat, though nobody is using it
+-    _handle = underlying
+-    
+     cdef inline int _term(self):
+         cdef int rc=0
+         if self.handle != NULL and not self.closed and getpid() == self._pid:
