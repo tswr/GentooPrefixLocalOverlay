@@ -25,11 +25,15 @@ src_prepare() {
 		"${FILESDIR}"/${PN}-0.49.1-build.patch
 	# force an US locale, otherwise make Makedep will bail out
 	epatch "${FILESDIR}"/${PN}-0.45-locales.patch
+	epatch "${FILESDIR}"/${PN}-0.49.1-ccdep.patch
+	epatch "${FILESDIR}"/${PN}-0.49.1-rule.patch
 	eautoreconf
 	tc-export CXX
 }
 
 src_configure() {
+	env > /Users/tswr/tmp/e.i
+	echo "env done"
 	econf --enable-lzw $(use_enable gif)
 }
 

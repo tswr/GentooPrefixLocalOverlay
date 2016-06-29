@@ -1,0 +1,11 @@
+--- rule.hpp	2011-02-25 16:15:18.000000000 +0300
++++ rule.hpp	2016-06-30 01:50:52.000000000 +0300
+@@ -88,7 +88,7 @@
+       PR_PNGAuto=15,
+       PR_PNGAutoMaybe=25,
+       PR_PNGAutoBadUnsigned=45,
+-      PR_PNGAutoBadSigned=55,
++      PR_PNGAutoBadSigned=55
+     END_STATIC_ENUM()
+     pr_t Predictor;
+ 
