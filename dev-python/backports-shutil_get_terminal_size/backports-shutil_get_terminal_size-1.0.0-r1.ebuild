@@ -29,5 +29,5 @@ python_install() {
 	distutils-r1_python_install
 
 	# main namespace provided by dev-python/backports
-	rm "${ED}$(python_get_sitedir)"/backports/__init__.py* || die
+	rm "${D}$(python_get_sitedir)"/backports/__init__.py* || die
 }
