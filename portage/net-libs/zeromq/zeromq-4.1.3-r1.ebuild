@@ -21,7 +21,6 @@ RDEPEND="
 	dev-libs/libsodium:=
 	pgm? ( =net-libs/openpgm-5.2.122 )"
 DEPEND="${RDEPEND}
-	sys-apps/util-linux
 	pgm? ( virtual/pkgconfig )"
 
 src_prepare() {
